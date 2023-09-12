@@ -22,27 +22,54 @@ private:
 
 public:
     // Default constructor.
-    // Initialize 'balance' to 0.
-    // TODO: Implement the default constructor.
+    Account() {
+        // Initialize 'balance' to 0.
+
+        balance = 0;
+    }
 
     // Parameterized constructor.
     // Initialize 'balance' with the provided 'initialBalance'.
-    // TODO: Implement the parameterized constructor.
+    Account(double initialBalance) {
+        balance = initialBalance;
+    }
 
     // Getter function to return the current balance.
+    double getBalance() {
+        return balance;
+    }
     // TODO: Implement the 'getBalance' function.
 
     // Setter function to set the balance to a new value.
+    void setBalance(double newBalance) {
+        balance = newBalance;
+    }
     // TODO: Implement the 'setBalance' function.
 
     // Function to deposit an amount into the account.
+    void deposit(double amount) {
+        balance += amount;
+    }
+
     // TODO: Implement the 'deposit' function.
 
     // Function to withdraw an amount from the account.
+    void withdraw(double amount){
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            }
+        else {
+            std::cout << "Insufficient funds!" << std::endl;
+        }
+        
+        }
     // TODO: Implement the 'withdraw' function.
 
     // Destructor.
     // Display a message indicating the account is being destroyed.
+   ~Account() {
+        std::cout << "Account with balance " << balance << " is being destroyed." << std::endl;
+    }
     // TODO: Implement the destructor.
 };
 
